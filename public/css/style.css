@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
+
+.logo {
+    display: block;
+    margin: auto;
+    width: 8%;
+    height: 8%;
+}
+h7{
+    text-align: center;
+    text-decoration: underline;
+    margin: auto;
+    font-weight: bold; 
+}
+h1{
+    margin-top: .5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+}
+body {
+    height: 100vh;
+    background: linear-gradient(to right, #ff512f, #dd2476);;
+    font-family: 'Nunito', sans-serif;
+    overflow: hidden;
+}
+#two-box{
+    display: flex;
+}
+.wrapper {
+    max-width: 83rem;
+    margin: auto;
+    height: 60vh;
+    width: 70vw;
+    margin-top: .2rem;
+    padding: 2rem;
+    overflow-y: auto;
+    margin-bottom: .5rem;
+    background: rgba(255, 255, 255, 0.40);
+    transform-style: preserve-3d;
+    transition: .3s;
+    border-radius: .5rem;
+    box-shadow: 0px 10px 15px rgba(0,0,0,0.3);
+}
+.wrapper::-webkit-scrollbar { 
+    width: 0;
+}
+#room {
+    background-image: linear-gradient(rgb(26, 99, 68), rgb(58, 175, 121));
+    max-width: 5rem;
+    border-radius: .5rem;
+    max-width: 33rem;
+    box-shadow: 0px 10px 15px rgba(0,0,0,0.3);
+    margin-left: auto;
+    background-color: aqua;
+    height: 50vh;
+    width: 20vw;
+    padding: 1%;
+    overflow-y: scroll;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    text-align: left;
+}
+.msg {
+    background-color: rgb(112, 2, 134);
+    width: 24%;
+    padding: 10px;
+    margin: 17px 12px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.img {
+    max-width: 30%;
+    max-height: fit-content;
+    padding: 2%;
+    margin: 1% 1%;
+}
+
+.left {
+    float: left;
+    clear: both;
+    background: #1C1C24;
+    color: rgb(255, 255, 255);
+    border-bottom: 2px solid rgb(6, 250, 238);
+    margin-top: 15px;
+    border-radius: 12%;
+}
+
+.right {
+    float: right;
+    clear: both;
+    color: rgb(255, 255, 255);
+    background: #1C1C24;
+    border-bottom: 2px solid rgb(217, 255, 1);
+    margin-top: 15px;
+    border-radius: 12%;
+}
+
+.mid {
+    float: left;
+    background-color: rgb(252, 205, 143);
+    clear: both;
+    margin-left: 30%;
+    margin-top: 15px;
+}
+
+#send-container {
+    display: block;
+    margin: 1%;
+    text-align: center;
+    max-width: 910px;
+    width: 100%;
+}
+
+#msgInput {
+    width: 68%;
+    border-radius: 4px;
+    height: 39px;
+    margin-top: 10px;
+    border: none; outline: none;
+    float: left;
+    background: linear-gradient(
+    to left top,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.5)
+    );
+    font-size: 1rem;
+    font-weight: 500;
+    border-bottom: 2px solid rgb(14, 29, 241);
+}
+::placeholder {
+    font-size: .9rem;
+    color: #3e3e3f;
+}
+#msgInput:focus {
+    border-bottom-color: rgb(6, 13, 112);
+}
+
+.btn {
+    line-height: 0;
+    padding: 1rem 2rem;
+    transition: 0.5s;
+    color: #fff;
+    float: right;
+    background: #0205b1;
+    box-shadow: 0px 2px 4px rgba(48, 64, 209, 0.4);
+    cursor: pointer;
+    border-radius: 4px;
+    height: 41px;
+    margin-top: 10px;
+    border: none; outline: none;
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+.btn i {
+    margin-left: 0.3rem;
+    font-size: .8rem;
+    transition: 0.3s;
+  }
+.btn:hover i {
+    transform: translate(5px);
+  }
+.btn:hover {
+    background: #03057e;
+  }
+
+
+#image {
+    
+    text-align: center;
+    margin-left: 8cm;
+    display: block;
+    width: 16%;
+    border: 3px solid rgb(14, 22, 14);
+    height: 20px;
+}
