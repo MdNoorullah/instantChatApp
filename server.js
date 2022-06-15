@@ -16,8 +16,8 @@ const io = socketio(server);
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 // To get files from static folder
-//app.use('/',express.static((__dirname + '/public/chat.html')));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/',express.static((__dirname + '/public')));
+
 // Run when client connects
 io.on("connection",socket=>{
     socket.on("new_user_joined",username =>{

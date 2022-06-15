@@ -22,7 +22,7 @@ const append_img = (image, position) => {
     if(position == 'left' || position=='mid'){
         audio.play();
         }
-        messageContainer.scrollTop = messageContainer.scrollHeight;
+       
 }
 // append message on chat area
 const append = (message, position) => {
@@ -34,8 +34,7 @@ const append = (message, position) => {
     if(position == 'left' || position=='mid'){
         audio.play();
         }
-        messageContainer.scrollTop = messageContainer.scrollHeight;
-   
+      
 }
 // update room list
 const append_user = (username) => {
@@ -86,7 +85,7 @@ form.addEventListener('submit', (e) => {
     msgInput.value='';
     imageinput=null;
     
-},false);
+});
 /// ask the new user his and her name and let the server know
 var username = prompt("Enter your name:");
 var you = document.getElementById("you");
@@ -110,15 +109,12 @@ socket.on('user_joined', data => {
 })
 // if the server sends a message and recieve
 socket.on('receive', data => {
-    shouldScroll = messageContainer.scrollTop + messageContainer.clientHeight === messages.scrollHeight;
+    
     append(`${data.name}:${data.message[0]}`, 'left');
     if (data.message[1] != null) {
         append_img(data.message[1], 'left');
     }
-    if (!shouldScroll) {
-        // Scroll down
-     messageContainer.scrollTop = messageContainer.scrollHeight;
-      }
+    
      
     })
 
