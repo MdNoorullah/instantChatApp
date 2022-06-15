@@ -1,4 +1,6 @@
-const socket = io();
+
+
+    socket=io();
 const form = document.getElementById("send-container");
 const messageInput = document.getElementById("msgInput");
 const imageinput = document.getElementById("image");
@@ -20,6 +22,7 @@ const append_img = (image, position) => {
     if(position == 'left' || position=='mid'){
         audio.play();
         }
+        messageContainer.scrollTop = messageContainer.scrollHeight;
 }
 // append message on chat area
 const append = (message, position) => {
@@ -31,6 +34,7 @@ const append = (message, position) => {
     if(position == 'left' || position=='mid'){
         audio.play();
         }
+        messageContainer.scrollTop = messageContainer.scrollHeight;
    
 }
 // update room list
@@ -80,8 +84,9 @@ form.addEventListener('submit', (e) => {
     }
     room = [];
     msgInput.value='';
+    imageinput=null;
     
-});
+},false);
 /// ask the new user his and her name and let the server know
 var username = prompt("Enter your name:");
 var you = document.getElementById("you");
@@ -101,19 +106,25 @@ socket.on("get_user_list", users_names => {
 socket.on('user_joined', data => {
     append(`${data} joined the chat`, 'mid');
     append_user(data);
-    wrapper.scrollTop = wrapper.scrollHeight;
+    
 })
 // if the server sends a message and recieve
 socket.on('receive', data => {
+    shouldScroll = messageContainer.scrollTop + messageContainer.clientHeight === messages.scrollHeight;
     append(`${data.name}:${data.message[0]}`, 'left');
     if (data.message[1] != null) {
         append_img(data.message[1], 'left');
     }
-     // Scroll down
-     wrapper.scrollTop = wrapper.scrollHeight;
-})
+    if (!shouldScroll) {
+        // Scroll down
+     messageContainer.scrollTop = messageContainer.scrollHeight;
+      }
+     
+    })
+
 // if a user leaves the chat
 socket.on('user_disconnected', (username) => {
     delete_element(username);
     append(`${username} left the chat`, 'left');
 })
+
