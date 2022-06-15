@@ -23,16 +23,19 @@ body {
     height: 100vh;
     background: linear-gradient(to right, #ff512f, #dd2476);;
     font-family: 'Nunito', sans-serif;
-    overflow: hidden;
+    overflow-y: auto;
+        scroll-behavior: smooth;
+    /* to make scrollable for small screen make overflow scroll */
 }
 #two-box{
-    display: flex;
+    display: block;
+    
 }
 .wrapper {
     max-width: 83rem;
     margin: auto;
     height: 60vh;
-    width: 70vw;
+    width: 80vw;
     margin-top: .2rem;
     padding: 2rem;
     overflow-y: auto;
@@ -43,19 +46,20 @@ body {
     border-radius: .5rem;
     box-shadow: 0px 10px 15px rgba(0,0,0,0.3);
 }
+
 .wrapper::-webkit-scrollbar { 
     width: 0;
 }
 #room {
     background-image: linear-gradient(rgb(26, 99, 68), rgb(58, 175, 121));
-    max-width: 5rem;
+    
     border-radius: .5rem;
-    max-width: 33rem;
+    max-width: 33rem; 
     box-shadow: 0px 10px 15px rgba(0,0,0,0.3);
-    margin-left: auto;
     background-color: aqua;
-    height: 50vh;
-    width: 20vw;
+    margin: auto;
+    height: 12vh;
+    width: 33vw;
     padding: 1%;
     overflow-y: scroll;
     overflow-y: auto;
@@ -66,7 +70,7 @@ body {
 }
 .msg {
     background-color: rgb(112, 2, 134);
-    width: 24%;
+    width: 16%;
     padding: 10px;
     margin: 17px 12px;
     border-radius: 5px;
@@ -113,11 +117,13 @@ body {
     margin: 1%;
     text-align: center;
     max-width: 910px;
-    width: 100%;
+    width: 90%;
+    margin: auto;
 }
 
 #msgInput {
-    width: 68%;
+    width: 58vw;
+    max-width: 700px;
     border-radius: 4px;
     height: 39px;
     margin-top: 10px;
@@ -179,3 +185,29 @@ body {
     border: 3px solid rgb(14, 22, 14);
     height: 20px;
 }
+/*
+@media (max-width: 700px) {
+    
+   
+    #room{
+        margin: auto;
+    height: 20vh;
+    width: 33vw;
+    }
+    
+    .wrapper{
+        width: 70vw;
+        height: 45vh;
+    }
+
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+
+	body{
+		overflow:scroll;
+	}
+   
+
+
+}
+*/

@@ -19,6 +19,7 @@ const append_img = (image, position) => {
     messageElement.classList.add('img');
     messageElement.classList.add(position);
     messageContainer.append(messageElement);
+    messageContainer.scrollTop = messageContainer.scrollHeight;
     if(position == 'left' || position=='mid'){
         audio.play();
         }
@@ -31,9 +32,11 @@ const append = (message, position) => {
     messageElement.classList.add('message');
     messageElement.classList.add(position);
     messageContainer.append(messageElement);
+    messageContainer.scrollTop = messageContainer.scrollHeight;
     if(position == 'left' || position=='mid'){
         audio.play();
         }
+
       
 }
 // update room list
@@ -51,6 +54,7 @@ const append_user = (username) => {
     // var e=document.createElement('br');
     // final.append(e);
     room_container.append(final);
+
 }
 // if the form get submitted send message to servr
 form.addEventListener('submit', (e) => {
@@ -83,11 +87,13 @@ form.addEventListener('submit', (e) => {
     }
     room = [];
     msgInput.value='';
-    imageinput=null;
+    
     
 });
 /// ask the new user his and her name and let the server know
-var username = prompt("Enter your name:");
+
+var username = prompt("Enter your name without spaces:");
+username=username.trim();
 var you = document.getElementById("you");
 let x='User Name:';
 x+=username;
