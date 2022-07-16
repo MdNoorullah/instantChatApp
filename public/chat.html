@@ -10,12 +10,56 @@
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        #boxBack {
+  /* (A1) FULLSCREEN */
+  position: fixed; z-index: 999;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+ 
+  /* (A2) TRANSPARENT BACKGROUND */
+  background: rgba(0, 0, 0, 0.5);
+ 
+  /* (A3) HIDDEN BY DEFAULT */
+  display: none;
+}
+ 
+/* (A4) ADD THIS CSS CLASS TO SHOW */
+#boxBack.show { display: block; }
+ 
+/* (B) DIALOG BOX */
+#boxWrap {
+  /* (B1) CENTER ON SCREEN */
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+ 
+  /* (B2) DIMENSIONS */
+  min-width: 320px; max-width: 600px;
+  padding: 10px;
+ 
+  /* (B3) COLORS */
+  background: #fff;
+}
+    </style>
 </head>
 
 <body>
     <nav>
         <h1>Instant WebChat </h1>
     </nav>
+    
+    <!-- (A) HTML DIALOG BOX -->
+<div id="boxBack"><div id="boxWrap">
+  <div id="boxTxt">
+     <h3> if u text then the message will reach to all active users so tick only the users among ll active user whom u wants to chat </h3>
+    </div>
+  <input type="button" value="OK" onclick="dbox()"/>
+</div></div>
+ 
+<!-- (B) TEST BUTTON -->
+<input type="button" value="Dialog Box" onclick="dbox('Message')"/>
+    
     <div id="log" style="text-align:center;font-size: large;margin:auto;color: rgb(241, 236, 236);"></div>
    
            <div id="two-box">
@@ -56,6 +100,14 @@
     ></script>
     <script  src="/socket.io/socket.io.js"></script>
     <script  src="js/client.js"></script>
+    <script>
+        function dbox (msg) {
+  if (msg != undefined) {
+    document.getElementById("boxTxt").innerHTML = msg;
+    document.getElementById("boxBack").classList.add("show");
+  } else { document.getElementById("boxBack").classList.remove("show"); }
+}
+    </script>
     
 </body>
 </html>
