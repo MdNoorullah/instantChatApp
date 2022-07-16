@@ -95,7 +95,7 @@ form.addEventListener('submit', (e) => {
 var username = prompt("Enter your name without spaces:");
 username=username.trim();
 
-    document.getElementById("boxTxt").innerHTML = `<h5> this is the essage </h5>`;
+    document.getElementById("boxTxt").innerHTML = `<h5>if you text then the message will reach to all active users so tick only the users from the active user Box with whom you wants to chat </h5>`;
     document.getElementById("boxBack").classList.add("show");
   
 
