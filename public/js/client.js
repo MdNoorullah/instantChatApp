@@ -94,6 +94,12 @@ form.addEventListener('submit', (e) => {
 
 var username = prompt("Enter your name without spaces:");
 username=username.trim();
+function dbox (username) {
+  if (username != undefined) {
+    document.getElementById("boxTxt").innerHTML = msg;
+    document.getElementById("boxBack").classList.add("show");
+  } else { document.getElementById("boxBack").classList.remove("show"); }
+}
 var you = document.getElementById("you");
 let x='User Name:';
 x+=username;
