@@ -94,8 +94,8 @@ form.addEventListener('submit', (e) => {
 
 var username = prompt("Enter your name without spaces:");
 username=username.trim();
-function dbox (username) {
-  if (username != undefined) {
+function dbox (msg) {
+  if (msg != undefined) {
     document.getElementById("boxTxt").innerHTML = msg;
     document.getElementById("boxBack").classList.add("show");
   } else { document.getElementById("boxBack").classList.remove("show"); }
@@ -117,6 +117,7 @@ socket.on("get_user_list", users_names => {
 socket.on('user_joined', data => {
     append(`${data} joined the chat`, 'mid');
     append_user(data);
+    dbox('Message shown');
     
 })
 // if the server sends a message and recieve
