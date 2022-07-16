@@ -127,6 +127,6 @@ socket.on('receive', data => {
 // if a user leaves the chat
 socket.on('user_disconnected', (username) => {
     delete_element(username);
-    append(`${username} left the chat`, 'left');
+    append(`${username} left the chat`, 'mid');
 })
 
