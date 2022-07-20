@@ -95,7 +95,7 @@ form.addEventListener('submit', (e) => {
 var username = prompt("Enter your name without spaces:");
 username=username.trim();
 
-    msg='if you text then the message will reach to all active users so tick only the users from the active user Box with whom you wants to chat';;
+    msg='For private chatting select the specific user from the active user Box else chat will be shared with all the active users';;
      dbox (msg);
    
   
