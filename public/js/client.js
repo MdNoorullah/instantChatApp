@@ -87,7 +87,7 @@ form.addEventListener('submit', (e) => {
     }
     room = [];
     msgInput.value='';
-    
+    imageinput.value=''
     
 });
 /// ask the new user his and her name and let the server know
